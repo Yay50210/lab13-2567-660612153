@@ -6,16 +6,16 @@ import { useState } from "react";
 export default function SearchPage() {
   const [searchInput, setSearchInput] = useState("");
 
-  //A hook that helps navigating each route programmatically
-  const router = useRouter();
+//A hook that helps navigating each route programmatically
+const router = useRouter();
 
-  const searchInputOnChange = (event) => {
-    setSearchInput(event.target.value);
-  };
+const searchInputOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchInput(event.target.value);
+};
 
-  const searchInputOnKeyUp = (event) => {
-    if (event.key === "Enter") searchBtnOnClick();
-  };
+const searchInputOnKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  if (event.key === "Enter") searchBtnOnClick();
+};
 
   const searchBtnOnClick = () => {
     router.push("/search/" + searchInput);
